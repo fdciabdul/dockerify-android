@@ -66,8 +66,8 @@ install_root() {
   git clone https://gitlab.com/newbit/rootAVD.git
   pushd rootAVD
   sed -i 's/read -t 10 choice/choice=1/' rootAVD.sh
-  ./rootAVD.sh system-images/android-30/default/x86_64/ramdisk.img
-  cp /opt/android-sdk/system-images/android-30/default/x86_64/ramdisk.img /data/android.avd/ramdisk.img
+  ./rootAVD.sh system-images/android-30/default/arm64-v8a/ramdisk.img
+  cp /opt/android-sdk/system-images/android-30/default/arm64-v8a/ramdisk.img /data/android.avd/ramdisk.img
   popd
   echo "Root Done"
   sleep 10
@@ -102,7 +102,7 @@ if [ -f /data/.first-boot-done ]; then
 fi
 
 echo "Init AVD ..."
-echo "no" | avdmanager create avd -n android -k "system-images;android-30;default;x86_64"
+echo "no" | avdmanager create avd -n android -k "system-images;android-30;default;arm64-v8a"
 
 [ "$gapps_needed" = true ] && install_gapps && [ "$root_needed" = false ] && adb reboot
 [ "$root_needed" = true ] && install_root
