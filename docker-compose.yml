@@ -17,11 +17,9 @@ services:
       #SCREEN_RESOLUTION: 720x720
       # Optional screen density (dpi)
       #SCREEN_DENSITY: 227
-      ROOT_SETUP: 0 # set to 1 to enable rooting
+      ROOT_SETUP: 1 # set to 1 to enable rooting
       GAPPS_SETUP: 0 # set to 1 to install PICO GAPPS
     privileged: true
-    devices:
-      - /dev/kvm
 
   scrcpy-web:
     container_name: scrcpy-web

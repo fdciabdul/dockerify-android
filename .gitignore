@@ -12,3 +12,4 @@ Thumbs.db
 
 # Docker compose data
 data*/
+.claude/settings.local.json
